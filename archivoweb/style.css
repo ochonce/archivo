@@ -1,0 +1,73 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #eaeaea;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor central */
+.container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Título */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Botón */
+button {
+  background: #1db954; /* verde Spotify vibes */
+  color: #000;
+  border: none;
+  padding: 0.9rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.35);
+}
+
+/* Resultado */
+#resultado {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+}
+
+#resultado p {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+#resultado a {
+  color: #1db954;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+#resultado a:hover {
+  text-decoration: underline;
+}
