@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Álbum al azar</title>
+  <meta charset="UTF-8">
+  <title>Archivo de Discos</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <h1>¿Qué escuchamos hoy?</h1>
+<body class="index-body">
 
-  <button id="randomBtn">Dame un álbum</button>
+  <!-- VIDEO DE FONDO -->
+  <video
+    id="bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+  ></video>
 
-  <div id="resultado"></div>
+  <!-- CONTENIDO -->
+  <div class="index-content">
+    <a href="archivo.html" class="index-title">
+      ARCHIVO DE DISCOS
+    </a>
+  </div>
 
-  <script src="script.js"></script>
+  <!-- SCRIPT CORRECTO -->
+  <script src="script-index.js"></script>
 </body>
 </html>

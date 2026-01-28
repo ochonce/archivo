@@ -1,54 +1,166 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f2f2f2;
-  color: #222;
-  text-align: center;
-  padding: 40px;
+/* =========================
+   RESET GENERAL
+========================= */
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 30px;
+/* ======================================================
+   INDEX  (YA FUNCIONA – NO TOCAR MÁS)
+====================================================== */
+
+.index-body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  background-color: #000;
-  color: #fff;
-  transition: background-color 0.2s ease;
+/* VIDEO DE FONDO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
-button:hover {
-  background-color: #333;
-}
-
-#resultado {
-  margin-top: 40px;
+/* CONTENIDO CENTRADO */
+.index-content {
+  position: fixed;
+  inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
 }
 
-iframe {
+/* TÍTULO CENTRAL */
+.index-title {
+  font-size: 72px;
+  font-weight: 900;
+  color: red;
+  text-decoration: none;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.index-title:hover {
+  opacity: 0.85;
+}
+
+/* ======================================================
+   ARCHIVO  (RESTAURADO COMO ESTABA)
+====================================================== */
+
+.archivo-body {
+  background: #f2f2f2;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* CONTADOR */
+.contador-container {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+#contador {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#contador span {
+  font-size: 13px;
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+/* TEXTO PARPADEANTE */
+.blink {
+  margin-top: 8px;
+  font-size: 13px;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 65%, 100% { opacity: 1; }
+  35% { opacity: 0; }
+}
+
+.blink a {
+  color: black;
+  text-decoration: underline;
+}
+
+/* ZONA CENTRAL */
+.archivo-middle {
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* BLOQUES */
+.bloque {
+  min-width: 220px;
+}
+
+/* BOTÓN */
+.btn-link {
+  font-size: 16px;
+  padding: 12px 22px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* RESULTADO */
+#resultado iframe {
   width: 300px;
   height: 380px;
-  border: none;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
-a {
-  color: #000;
-  text-decoration: none;
+/* RESEÑAS */
+.bloque-resenas {
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 16px;
+}
+
+.bloque-resenas h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#resenas p {
   font-size: 14px;
 }
 
-a:hover {
-  text-decoration: underline;
+/* TÍTULO GRANDE ABAJO */
+.archivo-grande {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 96px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-decoration: none;
+  color: black;
 }
