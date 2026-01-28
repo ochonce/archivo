@@ -1,18 +1,20 @@
-const videos = [
-  "video1.mp4",
-  "video2.mp4",
-  "video3.mp4",
-  "video4.mp4"
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = [
+    "video1.mp4",
+    "video2.mp4",
+    "video3.mp4",
+    "video4.mp4"
+  ];
 
-const video = document.getElementById("bg-video");
+  const video = document.getElementById("bgVideo");
 
-const elegido = videos[Math.floor(Math.random() * videos.length)];
+  if (!video) return;
 
-video.src = elegido;
-video.load();
+  const randomVideo = videos[Math.floor(Math.random() * videos.length)];
 
-video.play().catch(() => {
-  video.muted = true;
-  video.play();
+  video.src = randomVideo;
+  video.load();
+  video.play().catch(() => {
+    // fallback silencioso por autoplay policies
+  });
 });

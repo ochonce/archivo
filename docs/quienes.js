@@ -1,36 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Quiénes Somos</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+const SUPABASE_URL = "https://TU-PROYECTO.supabase.co";
+const SUPABASE_ANON_KEY = "TU_ANON_PUBLIC_KEY";
 
-<body class="quienes-page">
+const form = document.getElementById("resenaForm");
+const status = document.getElementById("formStatus");
 
-  <header class="quienes-header">
-    <a href="archivo.html" class="logo">ARCHIVO DE DISCOS</a>
-    <span class="quienes-label">¿QUIÉNES SOMOS?</span>
-  </header>
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-  <main class="quienes-content">
-    <p>Archivo de Discos es una forma de volver a escuchar.</p>
+  const autor = document.getElementById("autor").value.trim();
+  const texto = document.getElementById("texto").value.trim();
 
-    <h2>¿QUIÉNES SOMOS?</h2>
-    <p>(texto en construcción)</p>
+  if (!autor || !texto) {
+    status.textContent = "Completá todos los campos.";
+    return;
+  }
 
-    <h2>RESEÑAS</h2>
-    <p>(texto en construcción)</p>
+  status.textContent = "Enviando...";
 
-    <h2>BASE DE DATOS</h2>
-    <p>(texto en construcción)</p>
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/resenas`, {
+    method: "POST",
+    headers: {
+      "apikey": SUPABASE_ANON_KEY,
+      "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+      "Content-Type": "application/json",
+      "Prefer": "return=minimal"
+    },
+    body: JSON.stringify({
+      autor,
+      texto
+    })
+  });
 
-    <h2>OTROS LINKS</h2>
-    <p>(texto en construcción)</p>
-
-    <h2 class="join">JOIN THE ARMY</h2>
-    <p>(texto en construcción)</p>
-  </main>
-
-</body>
-</html>
+  if (response.ok) {
+    status.textContent = "Gracias por tu reseña 💿";
+    form.reset();
+  } else {
+    status.textContent = "Error al enviar. Probá de nuevo.";
+  }
+});

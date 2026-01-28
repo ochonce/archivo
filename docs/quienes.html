@@ -1,53 +1,48 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Archivo de Discos — Quiénes</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="quienes-page">
+<main class="quienes-content">
 
-  <!-- HEADER -->
-  <header class="quienes-header">
-    <a href="archivo.html" class="logo-link">ARCHIVO DE DISCOS</a>
-    <a href="quienes.html" class="qs-link-header">¿QUIÉNES SOMOS?</a>
-  </header>
+  <!-- TEXTO INTRO -->
+  <p class="intro-text">
+    Archivo de Discos es una forma de volver a escuchar.  
+    Un archivo vivo, colectivo y en construcción permanente.
+  </p>
 
-  <!-- CONTENIDO -->
-  <main class="quienes-content solo">
+  <!-- FORMULARIO -->
+  <section class="form-section">
+    <h2>Formulario para reseñas</h2>
 
-    <section>
-      <p class="intro-text">
-        Archivo de Discos es una forma de volver a escuchar.
-      </p>
-    </section>
+    <form id="resenaForm">
+      <input
+        type="text"
+        id="autor"
+        placeholder="Tu nombre"
+        required
+      />
 
-    <section>
-      <h2>¿QUIÉNES SOMOS?</h2>
-      <p>(texto en construcción)</p>
-    </section>
+      <textarea
+        id="texto"
+        placeholder="Escribí tu reseña"
+        required
+      ></textarea>
 
-    <section>
-      <h2>RESEÑAS</h2>
-      <p>(texto en construcción)</p>
-    </section>
+      <button type="submit">Enviar reseña</button>
+    </form>
 
-    <section>
-      <h2>BASE DE DATOS</h2>
-      <p>(texto en construcción)</p>
-    </section>
+    <p id="formStatus"></p>
+  </section>
 
-    <section>
-      <h2>OTROS LINKS</h2>
-      <p>(texto en construcción)</p>
-    </section>
+  <!-- BASE DE DATOS -->
+  <section>
+    <h2>Base de datos</h2>
+    <a href="https://drive.google.com/fake-link" target="_blank">
+      Acceso a la base completa
+    </a>
+  </section>
 
-    <section>
-      <h2>JOIN THE ARMY</h2>
-      <p>(texto en construcción)</p>
-    </section>
+  <!-- JOIN -->
+  <section class="join-army">
+    <h2>JOIN THE ARMY</h2>
+  </section>
 
-  </main>
+</main>
 
-</body>
-</html>
+<script src="quienes.js"></script>
